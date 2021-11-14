@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    <br>
+
+    <script type="text/javascript">
+      var btn = document.createElement("button");
+      //btn.setAttribute("href", "/postmethod/evgenii");
+      btn.innerHTML = "Click Me";
+
+      //btn.onclick = function(){myScript};
+
+      btn.onclick = function(){
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "/postmethod/evgenii", false);
+        xmlHttp.send( null );
+        console.log(xmlHttp.responseText)
+        //return xmlHttp.responseText
+        window.open(xmlHttp.responseText, '_blank');
+      }
+
+      //btn.addEventListener("click",
+      //$.get("/postmethod/evgenii", function(data) {
+      //  console.log($.parseJSON(data))
+      //})
+      //);
+
+
+      document.body.appendChild(btn);
+    </script>
+
+
+  </body>
+</html>
